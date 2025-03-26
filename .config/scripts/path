@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+pathlist=$(echo $PATH | tr ":" "\n")
+
+for path in $pathlist
+do 
+  echo "$path"
+done
+    
+
