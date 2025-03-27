@@ -76,6 +76,11 @@ path=($^path(N-/))
 
 export path
 
+set -o vi 
+
+export VISUAL=nvim
+export EDITOR=nvim
+
 # Aliases
 alias ls='ls --color'
 alias vim="nvim"
