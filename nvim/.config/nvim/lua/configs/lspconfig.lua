@@ -17,6 +17,15 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+-- list of all servers configured.
+lspconfig.servers = {
+  "lua_ls",
+  "clangd",
+  "gopls",
+  "hls",
+  "ols",
+  "pyright",
+}
 
 -- lspconfig.rust_analyzer.setup {
 --   on_attach = nvlsp.on_attach,
@@ -32,4 +41,3 @@ end
 --     }
 --   }
 -- }
-

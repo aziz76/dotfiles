@@ -1,8 +1,44 @@
 -- local cmp = require "cmp"
 
 return {
+    {
+        "williamboman/mason-lspconfig.nvim",
+        event = "VeryLazy",
+        dependencies = { "nvim-lspconfig" },
+        config = function()
+            require("configs.mason-lspconfig")
+        end,
+    },
+
+    {
+        "mfussenegger/nvim-lint",
+        event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            require("configs.lint")
+        end,
+    },
+
+    {
+        "rshkarin/mason-nvim-lint",
+        event = "VeryLazy",
+        dependencies = { "nvim-lint" },
+        config = function()
+            require("configs.mason-lint")
+        end,
+    },
   {
-    "tpope/vim-surround"
+    "nvim-tree/nvim-tree.lua",
+  opts = {
+    actions = {
+      open_file = {
+        resize_window = true,
+        quit_on_open = true,
+      },
+    },
+  },
+},
+  {
+    "tpope/vim-surround",
   },
   {
     "vimpostor/vim-tpipeline",
@@ -91,6 +127,7 @@ return {
     opts = {
       ensure_installed = {
         "rust-analyzer",
+        "clangd",
         "black",
         "mypy",
         "ruff",
@@ -113,26 +150,26 @@ return {
   },
   {
     "mrcjkb/rustaceanvim",
-    version = "^5", -- Recommended
+    version = "^6", -- Recommended
     lazy = false, -- This plugin is already lazy
     ["rust-analyzer"] = {
       cargo = {
         allFeatures = true,
       },
     },
-    config = function()
-      require "configs.rustaceanvim"
-      local mason_registry = require "mason-registry"
-      if mason_registry.is_installed "rust-analyzer" then
-        -- This may need to be tweaked depending on the operating system.
-        local ra = mason_registry.get_package "rust-analyzer"
-        local ra_filename = ra:get_receipt():get().links.bin["rust-analyzer"]
-        return { ("%s/%s"):format(ra:get_install_path(), ra_filename or "rust-analyzer") }
-      else
-        -- global installation
-        return { "rust-analyzer" }
-      end
-    end,
+--    config = function()
+--      require "configs.rustaceanvim"
+--      local mason_registry = require "mason-registry"
+--      if mason_registry.is_installed "rust-analyzer" then
+--        -- This may need to be tweaked depending on the operating system.
+--        local ra = mason_registry.get_package "rust-analyzer"
+--        local ra_filename = ra:get_receipt():get().links.bin["rust-analyzer"]
+--        return { ("%s/%s"):format(ra:get_install_path(), ra_filename or "rust-analyzer") }
+--      else
+--        -- global installation
+ --       return { "rust-analyzer" }
+--      end
+--    end,
   },
   {
     "mfussenegger/nvim-dap",
@@ -182,16 +219,7 @@ return {
       vim.g.rustfmt_autosave = 1
     end,
   },
-  "nvim-tree/nvim-tree.lua",
-  opts = {
-    actions = {
-      open_file = {
-        resize_window = true,
-        quit_on_open = true,
-      },
-    }
-  },
-
+  
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
