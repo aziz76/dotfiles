@@ -7,6 +7,8 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
+-- TmuxNavigator
+
 map({ "n" }, "<C-h>", "<cmd> TmuxNavigateLeft<CR>", { desc = "Navigate Left" })
 map({ "n" }, "<C-j>", "<cmd> TmuxNavigateDown<CR>", { desc = "Navigate Down" })
 map({ "n" }, "<C-k>", "<cmd> TmuxNavigateUp<CR>", { desc = "Navigate Up" })
@@ -14,11 +16,10 @@ map({ "n" }, "<C-l>", "<cmd> TmuxNavigateRight<CR>", { desc = "Navigate Right" }
 map({ "n" }, "<C-f>", "<cmd> Format<CR>", { desc = "Apply code formatting" })
 
 -- Nvim DAP
-
 map({ "n" }, "<Leader>dl", "<cmd>lua require'dap'.step_into()<CR>", { desc = "Debugger step into" })
 map({ "n" }, "<Leader>dj", "<cmd>lua require'dap'.step_over()<CR>", { desc = "Debugger step over" })
 map({ "n" }, "<Leader>dk", "<cmd>lua require'dap'.step_out()<CR>", { desc = "Debugger step out" })
-map({ "n" }, "<Leader>dc>", "<cmd>lua require'dap'.continue()<CR>", { desc = "Debugger continue" })
+map({ "n" }, "<Leader>dc", "<cmd>lua require'dap'.continue()<CR>", { desc = "Debugger continue" })
 map({ "n" }, "<C-A-r>", "<cmd>lua require'dap'.continue()<CR>", { desc = "Debugger continue" })
 map({ "n" }, "<Leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc = "Debugger toggle breakpoint" })
 map(

@@ -7,23 +7,7 @@ local M = {}
 
 M.base46 = {
   theme = "gruvchad",
-
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
 }
-
--- M.nvimtree = {
---   options = {
---       actions = {
---     open_file = {
---       resize_window = true,
---       quit_on_open = true,
---     },
---
---   },
--- },
 
 M.nvdash = { load_on_startup = true }
 M.ui = {

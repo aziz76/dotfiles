@@ -11,7 +11,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Add in oh-my-posh
-# eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/negligible.omp.json')"
+eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/negligible.omp.json')"
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -91,7 +91,7 @@ alias la="eza -a --icons=always"
 alias lla="eza -la --icons=always"
 alias lt="eza -T --icons=always"
 alias ltd="eza -TD"
-alias cat="ccat"
+alias cat="bat"
 
 # Shell Integrations
 eval "$(fzf --zsh)"
