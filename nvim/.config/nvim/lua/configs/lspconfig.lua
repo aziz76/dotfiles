@@ -28,9 +28,12 @@ lspconfig.servers = {
 
 -- lsps with default config
 for _, lsp in ipairs(default_servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
-  }
+  vim.lsp.config(lsp, { on_attach = on_attach }) -- These changes answer the breaking changes to lspconfig
+  vim.lsp.config(lsp, { on_init = on_init }) -- following the update.
+  vim.lsp.config(lsp, { capabilities = capabilities })
+  --   lspconfig[lsp].setup {
+  --     on_attach = on_attach,
+  --     on_init = on_init,
+  --     capabilities = capabilities,
+  --  }
 end

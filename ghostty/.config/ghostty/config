@@ -40,6 +40,6 @@ keybind = ctrl+s>d=new_split:right
 
 
 # Font settings 
-font-family = JetBrainsMono NFM Medium
+font-family = IosevkaTerm NFM Medium
 font-size = 18
 keybind = ctrl+0=reset_font_size

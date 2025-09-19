@@ -77,10 +77,6 @@ path=($^path(N-/))
 export path
 
 set -o vi 
-
-export VISUAL=nvim
-export EDITOR=nvim
-
 # Aliases
 alias ls='ls --color'
 alias vim="nvim"
@@ -118,4 +114,3 @@ export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgra
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/abdulaziz/.lmstudio/bin"
 # End of LM Studio CLI section
-
