@@ -1,13 +1,17 @@
 return {
+  { import = "nvchad.blink.lazyspec" },
+
   {
     "giuxtaposition/blink-cmp-copilot",
-    enabled = false,
   },
   {
-    "saghen/blink.cmp",
+    "Saghen/blink.cmp",
     -- optional: provides snippets for the snippet source
 
-    dependencies = { { "L3MON4D3/LuaSnip", version = "v2.*" } },
+    dependencies = {
+      { "L3MON4D3/LuaSnip", version = "v2.*" },
+      "giuxtaposition/blink-cmp-copilot",
+    },
 
     lazy = false, -- This plugin is already lazy
     -- use a release tag to download pre-built binaries
@@ -34,12 +38,6 @@ return {
       -- See :h blink-cmp-config-keymap for defining your own keymap
       keymap = { preset = "default" },
 
-      appearance = {
-        -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-        -- Adjusts spacing to ensure icons are aligned
-        nerd_font_variant = "mono",
-      },
-
       -- (Default) Only show the documentation popup when manually triggered
       completion = { documentation = { auto_show = false } },
 
@@ -59,13 +57,58 @@ return {
           copilot = {
             name = "copilot",
             enabled = true,
-            module = "blink-copilot",
+            module = "blink-cmp-copilot",
             score_offset = 850, -- ensure copilot results appear before others (except LSP/snippets)
             async = true, -- requires copilot.nvim >= v0.7.0
+            transform_items = function(_, items)
+              local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
+              local kind_idx = #CompletionItemKind + 1
+              CompletionItemKind[kind_idx] = "Copilot"
+              for _, item in ipairs(items) do
+                item.kind = kind_idx
+              end
+              return items
+            end,
           },
         },
       },
+      appearance = {
+        nerd_font_variant = "mono",
+        -- Blink does not expose its default kind icons so you must copy them all (or set your custom ones) and add Copilot
+        kind_icons = {
+          Copilot = "",
+          Text = "󰉿",
+          Method = "󰊕",
+          Function = "󰊕",
+          Constructor = "󰒓",
 
+          Field = "󰜢",
+          Variable = "󰆦",
+          Property = "󰖷",
+
+          Class = "󱡠",
+          Interface = "󱡠",
+          Struct = "󱡠",
+          Module = "󰅩",
+
+          Unit = "󰪚",
+          Value = "󰦨",
+          Enum = "󰦨",
+          EnumMember = "󰦨",
+
+          Keyword = "󰻾",
+          Constant = "󰏿",
+
+          Snippet = "󱄽",
+          Color = "󰏘",
+          File = "󰈔",
+          Reference = "󰬲",
+          Folder = "󰉋",
+          Event = "󱐋",
+          Operator = "󰪚",
+          TypeParameter = "󰬛",
+        },
+      },
       -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
       -- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
       -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`

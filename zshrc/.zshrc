@@ -114,3 +114,8 @@ export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgra
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/abdulaziz/.lmstudio/bin"
 # End of LM Studio CLI section
+
+# include the script to handle the Anthropic API key for Avante 
+
+source ~/.avante-anthropic-api-key.sh
+
