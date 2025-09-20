@@ -88,6 +88,7 @@ alias lla="eza -la --icons=always"
 alias lt="eza -T --icons=always"
 alias ltd="eza -TD"
 alias cat="bat"
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
 
 # Shell Integrations
 eval "$(fzf --zsh)"
