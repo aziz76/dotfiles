@@ -1,8 +1,9 @@
 local wezterm = require("wezterm")
 local config = {}
 
+config.enable_wayland = false
 config.font = wezterm.font("JetBrains Mono")
-config.color_scheme = "Gruvbox Dark (Gogh)"
+config.color_scheme = "Monokai Pro Ristretto (Gogh)"
 config.font_size = 18.0
 
 config.window_background_opacity = 0.9

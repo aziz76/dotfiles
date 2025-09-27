@@ -10,6 +10,8 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
+export PATH=$PATH:/home/abdulaziz/.local/bin
+
 # Add in oh-my-posh
 eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/negligible.omp.json')"
 
@@ -116,7 +118,10 @@ export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgra
 export PATH="$PATH:/Users/abdulaziz/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
 # include the script to handle the Anthropic API key for Avante 
 
 source ~/.avante-anthropic-api-key.sh
 
+
+. "$HOME/.local/share/../bin/env"
