@@ -1,29 +1,16 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {
-    filesystem = {
-      commands = {
-        -- If item is a file it will close neotree after opening it.
-        open_and_close_neotree = function(state)
-          require("neo-tree.sources.filesystem.commands").open(state)
+    event_handlers = {
 
-          local tree = state.tree
-          local success, node = pcall(tree.get_node, tree)
-
-          if not success then
-            return
-          end
-
-          if node.type == "file" then
-            require("neo-tree.command").execute({ action = "close" })
-          end
+      {
+        event = "file_open_requested",
+        handler = function()
+          -- auto close
+          -- vim.cmd("Neotree close")
+          -- OR
+          require("neo-tree.command").execute({ action = "close" })
         end,
-      },
-      window = {
-        mappings = {
-          ["<CR>"] = "open_and_close_neotree",
-          ["<S-CR>"] = "open",
-        },
       },
     },
   },
