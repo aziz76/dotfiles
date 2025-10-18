@@ -111,17 +111,12 @@ export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 fastfetch --config examples/13
 
-export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
-
-export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/abdulaziz/.lmstudio/bin"
-# End of LM Studio CLI section
+export PATH=$PATH:/home/abdulaziz/.cargo/bin
 
 
 # include the script to handle the Anthropic API key for Avante 
 
 source ~/.avante-anthropic-api-key.sh
-
-
-. "$HOME/.local/share/../bin/env"
+# 
+# 
+# . "$HOME/.local/share/../bin/env"

@@ -11,6 +11,7 @@
     "network",
     "network#speed",
     "pulseaudio",
+    "bluetooth",
     "cpu",
     "battery"
   ],
@@ -79,8 +80,8 @@
 	"network#speed": {
 	"interval": 1,
 	"format": "{ifname}",
-	"format-wifi": " {bandwidthUpBytes}  {bandwidthDownBytes}",
-	"format-ethernet": "󰌘  {bandwidthUpBytes}  {bandwidthDownBytes}",
+	"format-wifi": "  {bandwidthUpBytes}   {bandwidthDownBytes}",
+	"format-ethernet": "󰌘   {bandwidthUpBytes}   {bandwidthDownBytes}",
 	"format-disconnected": "󰌙",
 	"tooltip-format": "{ipaddr}",
 	"format-linked": "󰈁 {ifname} (No IP)",
