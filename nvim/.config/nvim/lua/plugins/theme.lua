@@ -1,8 +1,8 @@
 return {
   {
-    "folke/tokyonight.nvim",
+    "catppuccin/nvim",
     config = function()
-      require("tokyonight").setup({
+      require("catppuccin").setup({
         filter = "ristretto",
         override = function()
           return {
@@ -19,13 +19,13 @@ return {
           }
         end,
       })
-      vim.cmd([[colorscheme tokyonight]])
+      vim.cmd([[colorscheme catppuccin]])
     end,
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "catppuccin",
     },
   },
 }

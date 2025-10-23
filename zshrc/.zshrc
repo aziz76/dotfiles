@@ -10,7 +10,13 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-export PATH=$PATH:/home/abdulaziz/.local/bin
+export DOTNET_ROOT=$HOME/.dotnet
+PATH=$PATH:/home/abdulaziz/.local/bin:DOTNET_ROOT:DOTNET_ROOT/tools
+
+# Set editor environment variable
+export EDITOR='nvim'
+export VISUAL='nvim'
+export SYSTEMD_EDITOR='nvim'
 
 # Add in oh-my-posh
 eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/negligible.omp.json')"
@@ -65,16 +71,16 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Path
-if [[ -z $tmux ]]; then
-  path=(
-    $path
-    $HOME/.lmstudio/bin
-    $HOME/.config/scripts/
-    )
-fi 
-
-typeset -U path 
-path=($^path(N-/))
+# if [[ -z $tmux ]]; then
+#   path=(
+#     $path
+#     $HOME/.lmstudio/bin
+#     $HOME/.config/scripts/
+#     )
+# fi 
+# 
+# typeset -U path 
+# path=($^path(N-/))
 
 export path
 
@@ -90,7 +96,7 @@ alias lla="eza -la --icons=always"
 alias lt="eza -T --icons=always"
 alias ltd="eza -TD"
 alias cat="bat"
-alias get_idf='. $HOME/esp/esp-idf/export.sh'
+alias get-idf='. $HOME/esp/esp-idf/export.sh'
 
 # Shell Integrations
 eval "$(fzf --zsh)"
@@ -111,8 +117,7 @@ export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 fastfetch --config examples/13
 
-export PATH=$PATH:/home/abdulaziz/.cargo/bin
-
+# export PATH=$PATH:/home/abdulaziz/.cargo/bin
 
 # include the script to handle the Anthropic API key for Avante 
 
@@ -120,3 +125,5 @@ source ~/.avante-anthropic-api-key.sh
 # 
 # 
 # . "$HOME/.local/share/../bin/env"
+
+alias claude="/home/abdulaziz/.claude/local/claude"
