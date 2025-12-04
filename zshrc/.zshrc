@@ -11,7 +11,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 export DOTNET_ROOT=$HOME/.dotnet
-PATH=$PATH:/home/abdulaziz/.local/bin:DOTNET_ROOT:DOTNET_ROOT/tools
+PATH=$PATH:/home/abdulaziz/.local/bin:DOTNET_ROOT:DOTNET_ROOT/tools:/home/abdulaziz/.cargo/bin
 
 # Set editor environment variable
 export EDITOR='nvim'
@@ -126,4 +126,3 @@ source ~/.avante-anthropic-api-key.sh
 # 
 # . "$HOME/.local/share/../bin/env"
 
-alias claude="/home/abdulaziz/.claude/local/claude"
