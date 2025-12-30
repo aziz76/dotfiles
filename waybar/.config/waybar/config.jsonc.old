@@ -7,7 +7,7 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock", "custom/update", "custom/screenrecording-indicator"],
   "modules-right": [
-    "tray",
+    "group/tray-expander",
     "network",
     "network#speed",
     "pulseaudio",
@@ -126,9 +126,13 @@
       "default": ["", "", ""]
     }
   },
-  "tray": {
-    "icon-size": 21,
-    "spacing": 10,
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item"
+    },
+    "modules": ["custom/expand-icon", "tray"]
   },
   "custom/expand-icon": {
     "format": " ",

@@ -115,13 +115,13 @@ function y() {
 # Added by LM Studio CLI (lms)
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
-fastfetch --config examples/13
+fastfetch 
 
 # export PATH=$PATH:/home/abdulaziz/.cargo/bin
 
 # include the script to handle the Anthropic API key for Avante 
 
-source ~/.avante-anthropic-api-key.sh
+#source ~/.avante-anthropic-api-key.sh
 # 
 # 
 # . "$HOME/.local/share/../bin/env"
