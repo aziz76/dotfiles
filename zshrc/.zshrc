@@ -11,7 +11,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 export DOTNET_ROOT=$HOME/.dotnet
-PATH=$PATH:/home/abdulaziz/.local/bin:DOTNET_ROOT:DOTNET_ROOT/tools:/home/abdulaziz/.cargo/bin
+PATH=$PATH:/home/abdulaziz/.local/scripts:$PATH:/home/abdulaziz/.local/bin:DOTNET_ROOT:DOTNET_ROOT/tools:/home/abdulaziz/.cargo/bin
 
 # Set editor environment variable
 export EDITOR='nvim'
