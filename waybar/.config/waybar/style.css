@@ -1,10 +1,10 @@
 
 * {
-  background-color: rgba(108, 124, 89, 0.8);
+  background-color: rgba(108, 124, 89, 0);
   color: @foreground;
 
   border: none;
-  border-radius: 8;
+  border-radius: 15;
   min-height: 0;
   font-family: 'JetBrains Mono Nerd Font';
   font-size: 14px;
@@ -12,9 +12,11 @@
 
 .modules-left {
   margin-left: 8px;
+  background-color: rgba(108, 124, 89, 0.7);
 }
 
 .modules-right {
+  background-color: rgba(108, 124, 89, 0.7);
   margin-right: 8px;
 }
 
@@ -42,13 +44,14 @@
   margin-right: 17px;
 }
 
+#tray {
+  margin-right: 20px;
+  margin-left: 20px;
+}
 #network {
   margin-right: 13px;
 }
 
-#tray {
-  margin-right: 20px;
-}
 
 tooltip {
   padding: 2px;
@@ -59,7 +62,10 @@ tooltip {
 }
 
 #clock {
+  background-color: rgba(108, 124, 89, 0.7);
   margin-left: 8.75px;
+  margin-right: 8.75px;
+  padding: 0 10px;
 }
 
 .hidden {
