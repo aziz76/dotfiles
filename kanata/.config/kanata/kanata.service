@@ -1,0 +1,12 @@
+[Unit]
+Description=Kanata Service
+Requires=local-fs.target
+After=local-fs.target
+
+[Service]
+ExecStartPre=/usr/sbin/modprobe uinput
+ExecStart=/home/abdulaziz/.cargo/bin/kanata -c /home/abdulaziz/.config/kanata/tokyo60.kbd
+Restart=no
+
+[Install]
+WantedBy=sysinit.target

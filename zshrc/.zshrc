@@ -19,7 +19,7 @@ export VISUAL='nvim'
 export SYSTEMD_EDITOR='nvim'
 
 # Add in oh-my-posh
-eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/negligible.omp.json')"
+eval "$(oh-my-posh init zsh --config 'negligible')"
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -85,6 +85,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 export path
 
 set -o vi 
+
+
 # Aliases
 alias ls='ls --color'
 alias vim="nvim"
@@ -97,6 +99,21 @@ alias lt="eza -T --icons=always"
 alias ltd="eza -TD"
 alias cat="bat"
 alias get-idf='. $HOME/esp/esp-idf/export.sh'
+
+# Suffix Aliases
+alias -s c="$EDITOR"
+alias -s cpp="$EDITOR"
+alias -s rs="$EDITOR"
+alias -s json="jless"
+alias -s md="bat"
+alias -s mov="open"
+alias -s png="open"
+alias -s mp4="open"
+alias -s yaml="bat -l yaml"
+
+# Global Aliases
+alias -g INC="-S --needed --noconfirm"
+alias -g C="| wl-copy"
 
 # Shell Integrations
 eval "$(fzf --zsh)"
