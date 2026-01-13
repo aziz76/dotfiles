@@ -138,7 +138,7 @@ fastfetch
 
 # include the script to handle the Anthropic API key for Avante 
 
-source ~/.config/anthropic/anthropic_api_key.sh
+source ~/.config/api/api_keys.sh
 # 
 # 
 # . "$HOME/.local/share/../bin/env"
