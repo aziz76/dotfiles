@@ -1,12 +1,11 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
---
+
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
-
-map("n", "<C-n>", "<cmd> Neotree focus toggle<CR>", { desc = "Toggle Neotree" })
+-- map("n", "<C-n>", "<cmd> Neotree focus toggle<CR>", { desc = "Toggle Neotree" })
 
 -- TmuxNavigator
 
@@ -29,4 +28,3 @@ map(
 )
 map("n", "<Leader>de", "<cmd>lua require'dap'.terminate()<CR>", { desc = "Debugger reset" })
 map("n", "<Leader>dr", "<cmd>lua require'dap'.run_last()<CR>", { desc = "Debugger run last" })
-
