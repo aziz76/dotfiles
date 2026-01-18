@@ -1,12 +1,4 @@
 return {
-  {
-    "zbirenbaum/copilot.lua",
-    opts = {
-      suggestion = {
-        enabled = true,
-        auto_trigger = true,
-      },
-    },
-  },
-  { "giuxtaposition/blink-cmp-copilot" },
+  { "zbirenbaum/copilot.lua", enabled = false },
+  { "giuxtaposition/blink-cmp-copilot", enabled = false },
 }
