@@ -4,7 +4,8 @@ return {
     {
       "<C-n>",
       function()
-        Snacks.explorer({ cwd = LazyVim.root() })
+        local cwd = vim.fn.expand("%:p:h")
+        Snacks.explorer({ cwd = cwd })
       end,
       desc = "Toggle snacks explorer",
     },
