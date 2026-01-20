@@ -1,5 +1,5 @@
 configuration {
-  modes: "window,drun,run,ssh";
+/*	modes: "window,drun,run,ssh";*/
 /*	font: "mono 12";*/
 /*	location: 0;*/
 /*	yoffset: 0;*/
@@ -157,7 +157,6 @@ configuration {
 /*	me-select-entry: "MousePrimary";*/
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
-
   timeout {
       action: "kb-cancel";
       delay:  0;
@@ -168,4 +167,4 @@ configuration {
   }
 }
 
-@theme "gruvbox-dark"
+@theme "theme"
