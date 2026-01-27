@@ -148,3 +148,10 @@ source ~/.config/api/api_keys.sh
 export PATH="$PATH:/home/abdulaziz/.lmstudio/bin"
 # End of LM Studio CLI section
 
+# For pyTorch
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+
+export ROCM_PATH=/opt/rocm
+export HSA_OVERRIDE_GFX_VERSION=10.3.0
