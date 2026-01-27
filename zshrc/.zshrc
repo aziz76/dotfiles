@@ -11,7 +11,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 export DOTNET_ROOT=$HOME/.dotnet
-PATH=$PATH:/home/abdulaziz/.local/scripts:$PATH:/home/abdulaziz/.local/bin:DOTNET_ROOT:DOTNET_ROOT/tools:/home/abdulaziz/.cargo/bin
+PATH=$PATH:/home/abdulaziz/.local/scripts:$PATH:/home/abdulaziz/.local/bin:DOTNET_ROOT:DOTNET_ROOT/tools:/home/abdulaziz/.cargo/bin:/home/abdulaziz/Applications
 
 # Set editor environment variable
 export EDITOR='nvim'
@@ -142,4 +142,9 @@ source ~/.config/api/api_keys.sh
 # 
 # 
 # . "$HOME/.local/share/../bin/env"
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/abdulaziz/.lmstudio/bin"
+# End of LM Studio CLI section
 
