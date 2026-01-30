@@ -11,7 +11,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 export DOTNET_ROOT=$HOME/.dotnet
-PATH=$PATH:/home/abdulaziz/.local/scripts:$PATH:/home/abdulaziz/.local/bin:DOTNET_ROOT:DOTNET_ROOT/tools:/home/abdulaziz/.cargo/bin:/home/abdulaziz/Applications
+PATH=$PATH:/home/abdulaziz/.local/scripts:/home/abdulaziz/.local/bin:DOTNET_ROOT:DOTNET_ROOT/tools:/home/abdulaziz/.cargo/bin:/home/abdulaziz/Applications
 
 # Set editor environment variable
 export EDITOR='nvim'
@@ -155,3 +155,6 @@ eval "$(pyenv virtualenv-init -)"
 
 export ROCM_PATH=/opt/rocm
 export HSA_OVERRIDE_GFX_VERSION=10.3.0
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
