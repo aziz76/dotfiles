@@ -193,6 +193,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-v = 'exec-and-forget open -a /Applications/Visual Studio Code - Insiders.app'# Open Kitty terminal with alt + enter
     alt-u = 'exec-and-forget open -a /Users/abdulaziz/Applications/Autodesk Fusion.app/'
     alt-f = 'exec-and-forget open -a Finder'
+    alt-b = 'exec-and-forget open -a /Applications/Vivaldi.app'
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree', 'mode main'] # reset layout

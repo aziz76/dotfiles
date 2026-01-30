@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is a LazyVim-based Neovim configuration. LazyVim provides sensible defaults and a plugin management framework; custom configurations extend or override these defaults.
+This is a LazyVim-based Neovim configuration, part of a dotfiles repo (stow-managed, path: `nvim/.config/nvim`). LazyVim provides sensible defaults and a plugin management framework; custom configurations extend or override these defaults.
 
 ## Architecture
 
@@ -41,15 +41,16 @@ return {
 
 ## Active Configuration
 
-- **Theme:** Gruvbox
-- **AI Assistant:** Avante with DeepSeek backend (requires `DEEPSEEK_API_KEY` env var)
-- **File Explorer:** Snacks.nvim (`<C-n>` to toggle)
-- **Navigation:** vim-tmux-navigator for seamless Tmux pane switching
-- **Debugger:** DAP keymaps configured in `config/keymaps.lua`
+- **Theme:** Gruvbox (`lua/plugins/theme.lua`)
+- **AI Assistants:** Avante (primary provider: LM Studio local at `127.0.0.1:1234`, fallback: DeepSeek) and Minuet AI (DeepSeek). Requires `DEEPSEEK_API_KEY` env var for DeepSeek providers; `LM_STUDIO_API_KEY` for local LM Studio.
+- **File Explorer:** Snacks.nvim (`<C-n>` opens explorer rooted at current file's directory)
+- **Navigation:** vim-tmux-navigator for seamless Tmux pane switching (`<C-h/j/k/l>`)
+- **Debugger:** DAP keymaps under `<Leader>d` in `config/keymaps.lua`
+- **Keymaps:** `;` remapped to `:` in normal mode
 
 ## LazyVim Extras Enabled
 
-From `lazyvim.json`: Avante, Copilot, CMake, Rust
+From `lazyvim.json`: Avante, CMake, JSON, Rust
 
 ## Code Formatting
 
